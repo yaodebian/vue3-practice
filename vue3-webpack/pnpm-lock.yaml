@@ -7,6 +7,10 @@ settings:
 importers:
 
   .:
+    dependencies:
+      vue-router:
+        specifier: ^4.3.0
+        version: 4.6.3(vue@3.5.24)
     devDependencies:
       '@babel/core':
         specifier: ^7.28.5
@@ -692,6 +696,9 @@ packages:
 
   '@vue/compiler-ssr@3.5.24':
     resolution: {integrity: sha512-trOvMWNBMQ/odMRHW7Ae1CdfYx+7MuiQu62Jtu36gMLXcaoqKvAyh+P73sYG9ll+6jLB6QPovqoKGGZROzkFFg==}
+
+  '@vue/devtools-api@6.6.4':
+    resolution: {integrity: sha512-sGhTPMuXqZ1rVOk32RylztWkfXTRhuS7vgAKv0zjqk8gbsHkJ7xfFf+jbySxt7tWObEJwyKaHMikV/WGDiQm8g==}
 
   '@vue/reactivity@3.5.24':
     resolution: {integrity: sha512-BM8kBhtlkkbnyl4q+HiF5R5BL0ycDPfihowulm02q3WYp2vxgPcJuZO866qa/0u3idbMntKEtVNuAUp5bw4teg==}
@@ -2099,6 +2106,11 @@ packages:
       vue:
         optional: true
 
+  vue-router@4.6.3:
+    resolution: {integrity: sha512-ARBedLm9YlbvQomnmq91Os7ck6efydTSpRP3nuOKCvgJOHNrhRoJDSKtee8kcL1Vf7nz6U+PMBL+hTvR3bTVQg==}
+    peerDependencies:
+      vue: ^3.5.0
+
   vue@3.5.24:
     resolution: {integrity: sha512-uTHDOpVQTMjcGgrqFPSb8iO2m1DUvo+WbGqoXQz8Y1CeBYQ0FXf2z1gLRaBtHjlRz7zZUBHxjVB5VTLzYkvftg==}
     peerDependencies:
@@ -3051,6 +3063,8 @@ snapshots:
     dependencies:
       '@vue/compiler-dom': 3.5.24
       '@vue/shared': 3.5.24
+
+  '@vue/devtools-api@6.6.4': {}
 
   '@vue/reactivity@3.5.24':
     dependencies:
@@ -4450,6 +4464,11 @@ snapshots:
       webpack: 5.102.1(webpack-cli@6.0.1)
     optionalDependencies:
       '@vue/compiler-sfc': 3.5.24
+      vue: 3.5.24
+
+  vue-router@4.6.3(vue@3.5.24):
+    dependencies:
+      '@vue/devtools-api': 6.6.4
       vue: 3.5.24
 
   vue@3.5.24:

@@ -1,38 +1,22 @@
 <template>
   <div id="app">
     <header>
-      <h1>{{ title }}</h1>
+      <h1>按需编译 Demo（Webpack5 + Vue3）</h1>
+      <nav class="nav">
+        <router-link to="/">Home</router-link>
+        <span> | </span>
+        <router-link to="/about">About（懒加载）</router-link>
+      </nav>
     </header>
     <main>
-      <div class="content">
-        <p>{{ message }}</p>
-        <button @click="incrementCounter">点击次数: {{ counter }}</button>
-      </div>
+      <router-view />
     </main>
   </div>
 </template>
 
 <script>
-import { ref } from 'vue';
-
 export default {
-  name: 'App',
-  setup() {
-    const title = ref('Vue3 Webpack 应用');
-    const message = ref('欢迎使用Vue3和Webpack构建的应用！');
-    const counter = ref(0);
-
-    const incrementCounter = () => {
-      counter.value++;
-    };
-
-    return {
-      title,
-      message,
-      counter,
-      incrementCounter
-    };
-  }
+  name: 'App'
 };
 </script>
 
@@ -72,35 +56,7 @@ h1 {
   margin-bottom: 10px;
 }
 
-.content {
-  margin-top: 20px;
-}
-
-p {
-  color: #666;
-  font-size: 1.2rem;
-  margin-bottom: 25px;
-  line-height: 1.6;
-}
-
-button {
-  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
-  color: white;
-  border: none;
-  padding: 12px 30px;
-  border-radius: 25px;
-  font-size: 1.1rem;
-  cursor: pointer;
-  transition: all 0.3s ease;
-  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
-}
-
-button:hover {
-  transform: translateY(-2px);
-  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.3);
-}
-
-button:active {
-  transform: translateY(0);
-}
+.nav { margin-top: 10px; }
+.nav a { color: #333; text-decoration: none; }
+.nav a.router-link-active { font-weight: bold; }
 </style>

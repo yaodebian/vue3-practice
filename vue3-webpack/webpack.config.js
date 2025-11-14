@@ -10,6 +10,10 @@ module.exports = {
     filename: 'bundle.js',
     clean: true
   },
+  // 使用文件系统缓存，加快二次构建速度
+  cache: {
+    type: 'filesystem'
+  },
   module: {
     rules: [
       {
@@ -54,6 +58,13 @@ module.exports = {
     },
     extensions: ['.js', '.vue', '.json']
   },
+  // Webpack5 实验特性：对 import() 的模块进行按需（请求时）编译
+  experiments: {
+    lazyCompilation: {
+      imports: true,
+      entries: false
+    }
+  },
   devServer: {
     static: {
       directory: path.join(__dirname, 'dist')
@@ -61,6 +72,7 @@ module.exports = {
     compress: true,
     port: 8080,
     hot: true,
-    open: true
+    open: true,
+    historyApiFallback: true
   }
 };
